@@ -2,10 +2,10 @@ import React from "react";
 
 import "./ArticleGridCard.css";
 
-const ArticleGridCard = ({ article }) => {
+const ArticleGridCard = ({ article, closeModal }) => {
   return (
     <div>
-      <div className={"article_grid"}>
+      <div className={"article_grid"} onClick={() => closeModal()}>
         <div className={"item_grid"}>
           <div className="item_text">
             <h1 className="primary_heading">{article.title}</h1>

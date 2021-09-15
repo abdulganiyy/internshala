@@ -7,7 +7,7 @@ import ArticleGridCard from "../ArticleGridCard/ArticleGridCard";
 
 import "./ArticlesList.css";
 
-const ArticlesList = ({ gridMode, postsPerPage, pageNumber }) => {
+const ArticlesList = ({ gridMode, postsPerPage, pageNumber, closeModal }) => {
   const [startIndex, setStartIndex] = React.useState(0);
   const [endIndex, setEndIndex] = React.useState(0);
   const dispatch = useDispatch();
@@ -31,12 +31,20 @@ const ArticlesList = ({ gridMode, postsPerPage, pageNumber }) => {
           ? articles
               .slice(startIndex, endIndex)
               .map((article) => (
-                <ArticleGridCard key={article.id} article={article} />
+                <ArticleGridCard
+                  key={article.id}
+                  article={article}
+                  closeModal={closeModal}
+                />
               ))
           : articles
               .slice(startIndex, endIndex)
               .map((article) => (
-                <ArticleCard key={article.id} article={article} />
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  closeModal={closeModal}
+                />
               )))}
     </div>
   );
