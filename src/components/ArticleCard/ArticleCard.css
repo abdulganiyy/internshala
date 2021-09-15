@@ -1,0 +1,49 @@
+.article {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.item {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  flex: 80%;
+  box-shadow: 0 0.5rem 1.5rem #999;
+  display: flex;
+  height: auto;
+}
+
+.timestamp {
+  color: #ccc;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.item_img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.cancel {
+  flex: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.cancel span {
+  display: inline-block;
+  height: 5rem;
+  width: 5rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  color: orangered;
+  padding-top: 1.5rem;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
