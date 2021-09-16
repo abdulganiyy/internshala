@@ -1,12 +1,16 @@
 import React from "react";
 
+import { articlesActions } from "../../slices/articlesSlice";
+import { useDispatch } from "react-redux";
+
 import "./ArticleGridCard.css";
 
 const ArticleGridCard = ({ article, closeModal }) => {
+  const dispatch = useDispatch();
   return (
     <div>
-      <div className={"article_grid"} onClick={() => closeModal()}>
-        <div className={"item_grid"}>
+      <div className={"article_grid"}>
+        <div className={"item_grid"} onClick={() => closeModal()}>
           <div className="item_text">
             <h1 className="primary_heading">{article.title}</h1>
             <p>{article.body}</p>
@@ -18,7 +22,10 @@ const ArticleGridCard = ({ article, closeModal }) => {
             className={"item_grid_img"}
           />
         </div>
-        <div className={"gridcancel"}>
+        <div
+          className={"gridcancel"}
+          onClick={() => dispatch(articlesActions.removeArticle(article.id))}
+        >
           <span>
             <ion-icon name="close-outline"></ion-icon>
           </span>

@@ -65,6 +65,9 @@ const FeedbackForm = ({ changeActiveTab }) => {
           ></textarea>
         </div>
         <div className="form_group">
+          <span className="search">
+            <ion-icon name="search-outline"></ion-icon>
+          </span>
           <label htmlFor="country" className="form_label">
             Country:
           </label>

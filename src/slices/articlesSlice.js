@@ -19,7 +19,14 @@ const articlesSlice = createSlice({
     articles: null,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    removeArticle: (state, action) => {
+      let id = action.payload;
+
+      let newArticles = [...state.articles].filter((item) => item.id !== id);
+      state.articles = newArticles;
+    },
+  },
 
   extraReducers: {
     [fetchArticles.fulfilled]: (state, action) => {

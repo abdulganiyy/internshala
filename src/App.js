@@ -1,7 +1,6 @@
 import React from "react";
 
 import "./App.css";
-// import Articles from "./components/Articles/Articles.js";
 import ArticlesList from "./components/ArticlesList/ArticlesList";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Pagination from "./components/Pagination/Pagination";
