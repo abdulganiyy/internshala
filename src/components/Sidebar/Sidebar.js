@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Sidebar.css";
 
-const Sidebar = ({ gridMode, changeGridMode }) => {
+const Sidebar = ({ gridMode, changeGridMode, changeActiveTab, activeTab }) => {
   return (
     <div className="sidebar">
       <div className="sidebar_item">
@@ -18,26 +18,39 @@ const Sidebar = ({ gridMode, changeGridMode }) => {
           </div>
         </div>
       </div>
-      <div className="sidebar_item">
-        <h1 className="primary_heading">View Toggle</h1>
-        <div className="toggle-views">
-          <span
-            onClick={() => changeGridMode()}
-            className={gridMode ? "toggle toggle-active" : "toggle"}
-          >
-            <ion-icon name="grid-outline"></ion-icon>
-          </span>
-          <span
-            onClick={() => changeGridMode()}
-            className={!gridMode ? "toggle toggle-active" : "toggle"}
-          >
-            <ion-icon name="list-outline"></ion-icon>
-          </span>
-        </div>
-      </div>
+      {activeTab === "home" ? (
+        <>
+          <div className="sidebar_item">
+            <h1 className="primary_heading">View Toggle</h1>
+
+            <div className="toggle-views">
+              <span
+                onClick={() => changeGridMode()}
+                className={gridMode ? "toggle toggle-active" : "toggle"}
+              >
+                <ion-icon name="grid-outline"></ion-icon>
+              </span>
+              <span
+                onClick={() => changeGridMode()}
+                className={!gridMode ? "toggle toggle-active" : "toggle"}
+              >
+                <ion-icon name="list-outline"></ion-icon>
+              </span>
+            </div>
+          </div>
+        </>
+      ) : null}
+
       <div className="sidebar_item">
         <h1 className="primary_heading">Have A Feedback?</h1>
-        <p className="sidebar_paragraph">We are listening</p>
+        <p
+          className={
+            activeTab !== "home" ? "sidebar_paragraph red" : "sidebar_paragraph"
+          }
+          onClick={() => changeActiveTab("feedback")}
+        >
+          We are listening
+        </p>
       </div>
     </div>
   );

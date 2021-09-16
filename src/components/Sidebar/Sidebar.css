@@ -57,4 +57,9 @@
   text-align: center;
   font-weight: 700;
   margin-top: 1rem;
+  cursor: pointer;
+}
+
+.red {
+  background-color: salmon;
 }
